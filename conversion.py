@@ -9,23 +9,23 @@ def _is_valid(num_string):
     if not s:
         return False
         
-    # Handle optional sign
+ 
     if s[0] in ('+', '-'):
         s = s[1:]
         
-    if not s:  # String was just a sign
+    if not s:  
         return False
         
     parts = s.split('.')
     if len(parts) > 2:
-        return False  # Too many decimal points
+        return False 
         
     if len(parts) == 1:
         return parts[0].isdigit()
         
-    # If there is a decimal point, check both sides
+
     if not parts[0] and not parts[1]:
-        return False  # Just a decimal point "."
+        return False  
         
     if parts[0] and not parts[0].isdigit():
         return False
@@ -45,14 +45,14 @@ def characteristic(num_string):
     if not _is_valid(num_string):
         return False, 0
         
-    # Clean the string for parsing
+   
     clean_str = num_string.strip()
     
-    # Split by decimal
+   
     parts = clean_str.split('.')
     int_part = parts[0]
     
-    # Handle cases like ".5" or "-.5"
+
     if int_part == '' or int_part == '+' or int_part == '-':
         return True, 0
         
