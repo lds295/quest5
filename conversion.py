@@ -13,7 +13,7 @@ def _is_valid(num_string):
     if s[0] in ('+', '-'):
         s = s[1:]
         
-    if not s:  # String was just a sign
+    if not s: 
         return False
         
     parts = s.split('.')
